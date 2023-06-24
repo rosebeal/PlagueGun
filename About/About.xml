@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ModMetaData>
+  <name>Test Mod - Plague Gun</name> <!-- The name of your mod in the mod list -->
+  <author>Rose</author>
+  <packageId>Rose.PlagueGun</packageId> <!-- a unique identifier for your mod. Must contain only a-z and periods, no spaces. -->
+  <supportedVersions> <!-- the version(s) your mod supports -->
+    <li>1.4</li>
+  </supportedVersions>
+  <description>This mod adds a plague gun, a weapon that has a chance to give your enemies the plague.\n\nFor version 1.1.</description>
+</ModMetaData>
