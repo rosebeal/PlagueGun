@@ -13,10 +13,19 @@ namespace RS_PlagueGun
         public float addHediffChance = 0.05f;
         public HediffDef hediffToAdd;
     }
-
+    
     public class ModExtension_FireBullet : DefModExtension
     {
-        //add to xml!!
+        
         public int fireSize = 1;
     }
+    
+    public class ModExtension_SleepBullet : DefModExtension
+    {
+        /*
+        public float addHediffChance = 0.05f;
+        public HediffDef hediffToAdd;
+        */
+    }
+    
 }

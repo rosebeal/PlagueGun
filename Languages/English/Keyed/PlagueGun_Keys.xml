@@ -3,5 +3,9 @@
 <LanguageData>
 
 	<RS_PlagueBullet_SuccessMessage>{0} infected {1} with the plague!</RS_PlagueBullet_SuccessMessage>
+	
+	<RS_FireBullet_SuccessMessage>{0} set {1} on fire!</RS_FireBullet_SuccessMessage>
+	
+	<RS_SleepBullet_SuccessMessage>{0} sent {1} to sleep!</RS_SleepBullet_SuccessMessage>
 
 </LanguageData>

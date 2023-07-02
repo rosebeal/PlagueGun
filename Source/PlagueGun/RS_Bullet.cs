@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using RimWorld;
 using Verse;
+using Verse.AI;
 
 namespace RS_PlagueGun
 {
@@ -38,11 +39,13 @@ namespace RS_PlagueGun
                         hitPawn.health.AddHediff(hediff);
                     }
                 }
-                
+
             }
         }
     }
 
+    
+   
     public class Projectile_FireBullet : Bullet
     {
         public ModExtension_FireBullet Props => def.GetModExtension<ModExtension_FireBullet>();
@@ -55,13 +58,17 @@ namespace RS_PlagueGun
             {
                 if (hitThing != null && hitThing is Pawn hitPawn)
                 {
+                    Messages.Message("RS_FireBullet_SuccessMessage".Translate(
+                    this.launcher.Label, hitPawn.Label
+                ), MessageTypeDefOf.NeutralEvent);
+
                     hitPawn.TryAttachFire(Props.fireSize);
                     
                 }
                 //if it hits something thats not a pawn
                 else if (hitThing != null) 
                 {
-                    FireUtility.TryAttachFire(hitThing,Props.fireSize);
+                    FireUtility.TryAttachFire(hitThing, Props.fireSize);
                 }
             }
             
@@ -69,4 +76,35 @@ namespace RS_PlagueGun
             
         }
     }
+    
+    //add in xml and polish up
+    public class Projectile_SleepBullet : Bullet
+    {
+        public ModExtension_SleepBullet Props => def.GetModExtension<ModExtension_SleepBullet>();
+
+        protected override void Impact(Thing hitThing, bool blockedByShield = false)
+        {
+            
+            base.Impact(hitThing, blockedByShield);
+            
+            if (Props != null && hitThing != null && hitThing is Pawn hitPawn)
+            {
+                
+                Messages.Message("RS_SleepBullet_SuccessMessage".Translate(
+                    this.launcher.Label, hitPawn.Label
+                ), MessageTypeDefOf.NeutralEvent);
+                
+                
+                HealthUtility.TryAnesthetize(hitPawn);
+                    
+                
+
+            }
+            
+            
+        }
+    }
+    
 }
+    
+    
