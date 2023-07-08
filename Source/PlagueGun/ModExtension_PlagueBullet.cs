@@ -18,14 +18,12 @@ namespace RS_PlagueGun
     {
         
         public int fireSize = 1;
+        public float fireChance = 1f;
     }
     
     public class ModExtension_SleepBullet : DefModExtension
     {
-        /*
-        public float addHediffChance = 0.05f;
-        public HediffDef hediffToAdd;
-        */
+        public float sleepChance = 1f;
     }
     
 }
